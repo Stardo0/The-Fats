@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fats</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+ 
+
+ import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+ 
+ // my Firebase config
+ const firebaseConfig = {
+     apiKey: "AIzaSyAXtLNPgeCOdgI_Jrn9AtKGG6k3ADmFSJA",
+     authDomain: "the-fats-4c640.firebaseapp.com",
+     projectId: "the-fats-4c640",
+     storageBucket: "the-fats-4c640.appspot.com",
+     messagingSenderId: "775676592680",
+     appId: "1:775676592680:web:7c4ee17217930ee6782b1d",
+     measurementId: "G-T770F9QSDL"
+   };
+ 
+ 
+ 
+ const app = initializeApp(firebaseConfig);
+ const auth = getAuth();
+ const provider = new GoogleAuthProvider()
+ 
+ const signInButton = document.getElementById("signInButton");
+ const signOutButton = document.getElementById("signOutButton");
+ const message = document.getElementById("message");
+ const userName = document.getElementById("userName");
+ const userEmail = document.getElementById("userEmail");
+ 
+ signOutButton.style.display = "none";
+ message.style.display = "none";
+ 
+ const userSignIn = async() => {
+   signInWithPopup(auth, provider)
+   .then((result) => {
+       const user = result.user
+       console.log(user);
+   }).catch((error) => {
+       const errorCode = error.code;
+       const errorMessage = error.message
+   })
+ }
+ 
+ const userSignOut = async() => {
+   signOut(auth).then(() => {
+       alert("You have signed out successfully!");
+   }).catch((error) => {})
+ }
+ 
+ onAuthStateChanged(auth, (user) => {
+        const signInButton = document.getElementById("signInButton");
+        const signOutButton = document.getElementById("signOutButton");
+        const userProfileImage = document.getElementById("userProfileImage");
+
+        if (user) {
+            signOutButton.style.display = "block";
+            message.style.display = "block";
+            userName.innerHTML = user.displayName;
+            userEmail.innerHTML = user.email;
+
+            // Profilbild hinzufügen, wenn vorhanden
+            if (user.photoURL) {
+                userProfileImage.src = user.photoURL;
+                userProfileImage.style.display = "block"; // Zeige das Bild-Element
+            } else {
+                userProfileImage.style.display = "none"; // Verstecke das Bild-Element
+            }
+
+            // Den Login-Button ausblenden
+            signInButton.style.display = "none";
+        } else {
+            signOutButton.style.display = "none";
+            message.style.display = "none";
+
+            // Den Login-Button wieder einblenden
+            signInButton.style.display = "block";
+
+            userProfileImage.style.display = "none"; // Verstecke das Bild-Element, da kein Benutzer eingeloggt ist
+        }
+    })
+
+    signInButton.addEventListener('click', userSignIn);
+    signOutButton.addEventListener('click', userSignOut);
+
+ 
+ signInButton.addEventListener('click', userSignIn);
+ signOutButton.addEventListener('click', userSignOut);
+  </script>
+
+
+
+  <div id="Top_bar">
+    <div id="Title">The Fats</div>
+    <button class="full-rounded" id="signInButton">
+    <span>Loging In</span>
+    <div class="border full-rounded"></div></button>
+
+    <button class="full-rounded" id="signOutButton">
+      <span>Sign Out</span>
+      <div class="border full-rounded"></div>
+    </button>
+
+    <div id="profile_picture">
+      <img id="userProfileImage" src="" alt="Profilbild">
+    </div>
+  </div>
+
+<div id="main">
+  <div id="Start_Screen">
+    <div id="title">
+      Join the Fats Discord
+    </div>
+    <div id="subtitle">
+      Get a spot on the Fats Discord server and have some fun!
+    </div>
+    <button class="learn-more">
+      <span class="circle" aria-hidden="true">
+      <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">Join Discord</span>
+    </button>
+  </div>
+</div>
+
+
+
+    <div id="message">
+        <p>You have signed in as <span id="userName"></span> with the email <span id="userEmail"></span> </p>
+    </div>
+</body>
+</html>
