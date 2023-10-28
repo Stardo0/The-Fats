@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Fats</title>
     <link rel="stylesheet" href="./Style/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 </head>
 <body>
   <script type="module">
@@ -60,6 +63,7 @@
         const signInButton = document.getElementById("signInButton");
         const signOutButton = document.getElementById("signOutButton");
         const userProfileImage = document.getElementById("userProfileImage");
+        const main = document.getElementById("main");
 
         if (user) {
             signOutButton.style.display = "block";
@@ -77,6 +81,7 @@
 
             // Den Login-Button ausblenden
             signInButton.style.display = "none";
+            main.style.display = "none";
         } else {
             signOutButton.style.display = "none";
             message.style.display = "none";
@@ -95,6 +100,28 @@
  signInButton.addEventListener('click', userSignIn);
  signOutButton.addEventListener('click', userSignOut);
   </script>
+
+<script>
+//based on a pen by @robinselmer
+var url = "https://api.minetools.eu/ping/38.242.232.10/28265";
+ 
+$.getJSON(url, function(r) {
+    //data is the JSON string
+ if(r.error){
+    $('#rest').html('Server Offline');
+   return false;
+ } 
+var pl = '';
+ if(r.players.sample.length > 0 ){ pl = '<br>Online Player: '+r.players.sample[0].name;  } 
+  $('#rest').html(r.description.replace(/§(.+?)/gi, '')+'<br><b>Players Online:</b> '+r.players.online+pl);
+ $('#favicon').attr('src', r.favicon);
+    
+});
+
+</script>
+
+<script>
+</script>
 
 
 
@@ -122,15 +149,57 @@
     <div id="subtitle">
       Get a spot on the Fats Discord server and have some fun!
     </div>
+    <a href="https://discord.gg/V8DQkjrDYd">
     <button class="learn-more">
       <span class="circle" aria-hidden="true">
       <span class="icon arrow"></span>
       </span>
       <span class="button-text">Join Discord</span>
     </button>
+    </a>
   </div>
 </div>
 
+<div id="Ips">
+  <div id="minecraft_ip">
+    <div id="title">
+      Minecraft Mod's Server
+    </div>
+    <div id="ip">
+      eu5606107.g-portal.game
+    </div>
+    <div id="rest">
+      Loding...
+    </div>
+    <a href="/public/sites/MC/minecraft_rules.html">
+      <button class="learn-more">
+        <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Rules</span>
+      </button>
+    </a>
+  </div>
+
+
+    <div id="scp_sl_ip">
+      <div id="title">
+        SCP:SL Server
+      </div>
+      <div id="ip">
+        85.6.151.106:77777
+      </div>
+      <a href="/public/sites/SCP/rules_scp.html">
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Rules</span>
+        </button>
+      </a>
+    </div>
+</div>  
+</div>
 
 
     <div id="message">
