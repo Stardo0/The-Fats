@@ -10,15 +10,11 @@ This README provides an overview of TheFats Group website, designed to enhance t
 
 As of now, TheFats Group website offers the following features:
 
-1. **User Profiles**: Create and manage your user profile to personalize your experience and connect with other group members.
+1. **Activity Listings**: Explore and join a wide range of online activities, including gaming sessions, collaborative projects, and social events.
 
-2. **Activity Listings**: Explore and join a wide range of online activities, including gaming sessions, collaborative projects, and social events.
+2. **IP Sharing**: Share and discover IP addresses for online activities hosted by group members.
 
-3. **IP Sharing**: Share and discover IP addresses for online activities hosted by group members.
-
-4. **User Forums**: Engage in discussions, plan activities, and share your thoughts within the community through our user forums.
-
-5. **User Experience**: We are committed to continually improving the user experience. Your feedback is invaluable to us, and we welcome any suggestions to enhance the platform.
+3. **User Experience**: We are committed to continually improving the user experience. Your feedback is invaluable to us, and we welcome any suggestions to enhance the platform.
 
 ## Future Developments
 
