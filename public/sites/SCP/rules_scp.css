@@ -1,5 +1,5 @@
 body {
-    background-color: #c0c0c0;
+    background-color: #474747;
     font-family: Arial, sans-serif;
 }
 
@@ -60,7 +60,7 @@ button:hover .border {
 #Start_Screen {
     width: 500px;
     background-color: #c0c0c0;
-    border-radius: 5px;
+    border-radius: 20px;
     padding: 20px;
     text-align: left;
 }

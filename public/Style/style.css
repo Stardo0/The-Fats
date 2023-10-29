@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(71, 71, 71);
+    background-color: #474747;
 }
 
 #Top_bar {
@@ -272,7 +272,7 @@ body {
     border-radius: 20px;
     width: 100%;
     max-width: 500px;
-    height: 250px;
+    height: 270px;
     text-align: center;
     font-size: 18px;
     margin: 20px 20px 20px 20px;
