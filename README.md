@@ -30,11 +30,5 @@ We have exciting plans for the future:
 
 To get started, simply sign up for a user account on TheFats Group website and explore the various activities and discussions available. This is your space to connect with fellow group members, plan activities, and share experiences.
 
-## Contact Us
-
-If you have questions, feedback, or encounter issues, please feel free to reach out to us through our contact page. Your satisfaction is our priority, and we are here to support your online experience with TheFats Group.
-
-Enjoy using the website, and have a fantastic time connecting with TheFats Group!
-
 Sincerely,
 The TheFats Group Website Team
