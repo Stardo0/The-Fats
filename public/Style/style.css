@@ -160,104 +160,14 @@ body {
     letter-spacing: 2px;
 }
 
-#Start_Screen button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    background: transparent;
-    padding: 0;
-    font-size: inherit;
-    font-family: inherit;
-    margin-top: 40px ;
-   }
-   
-   #Start_Screen button.learn-more {
-    width: 12rem;
-    height: auto;
-   }
-   
-   #Start_Screen button.learn-more .circle {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
-    margin: 0;
-    width: 3rem;
-    height: 3rem;
-    background: #282936;
-    border-radius: 1.625rem;
-   }
-   
-   #Start_Screen button.learn-more .circle .icon {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background: #fff;
-   }
-   
-   #Start_Screen button.learn-more .circle .icon.arrow {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    left: 0.625rem;
-    width: 1.125rem;
-    height: 0.125rem;
-    background: none;
-   }
-   
-   #Start_Screen button.learn-more .circle .icon.arrow::before {
-    position: absolute;
-    content: "";
-    top: -0.29rem;
-    right: 0.0625rem;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
-    transform: rotate(45deg);
-   }
-   
-   #Start_Screen button.learn-more .button-text {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0.75rem 0;
-    margin: 0 0 0 2.7rem;
-    color: #282936;
-    font-weight: 700;
-    line-height: 1.6;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: fantasy;
-    letter-spacing: 3px;
-   }
-   
-   #Start_Screen button:hover .circle {
-    width: 100%;
-   }
-   
-   #Start_Screen button:hover .circle .icon.arrow {
-    background: #fff;
-    transform: translate(1rem, 0);
-   }
-   
-   #Start_Screen button:hover .button-text {
-    color: #fff;
-    font-family: fantasy;
-    font-weight: 100;
-   }
-
+ /* Dev info */
 
 #message {
     color: white;
     margin-left: 20px;
 }
+
+/* ip showase boxes */
 
 #Ips {
     display: flex;
@@ -267,45 +177,16 @@ body {
     margin-top: 40px;
 }
 
-#minecraft_ip {
-    background-color: #c0c0c0;
-    border-radius: 20px;
-    width: 100%;
-    max-width: 500px;
-    height: 270px;
-    text-align: center;
-    font-size: 18px;
-    margin: 20px 20px 20px 20px;
-    justify-self: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-#minecraft_ip:hover {
-    transform: scale(1.01);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-#minecraft_ip #ip_mc {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-#minecraft_ip #title {
-    font-family: fantasy;
-    margin-top: 35px;
-    font-size: 20px;
-}
-
-#minecraft_ip #rest {
+#server_ip #rest {
     margin-top: 20px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#scp_sl_ip {
+#server_ip {
     background-color: #c0c0c0;
     border-radius: 20px;
-    width: 100%;
-    max-width: 500px;
-    height: 250px;
+    width: 450px;
+    height: auto;
     text-align: center;
     font-size: 18px;
     margin: 20px 20px 20px 20px;
@@ -313,77 +194,24 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#scp_sl_ip:hover {
+#port {
+    margin-bottom: 30px;
+}
+
+#server_ip:hover {
     transform: scale(1.01);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#scp_sl_ip #title {
+#server_ip #title {
     font-family: fantasy;
     margin-top: 35px;
     font-size: 20px;
 }
 
-#scp_sl_ip #ip_scp {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+  /* Learnmore button (rules, discord) */
 
-.container {
-    --color: #282936;
-    --size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    cursor: pointer;
-    font-size: var(--size);
-    user-select: none;
-    fill: var(--color);
-    margin-top: 40px;
-  }
-  
-  .container .clipboard {
-    position: absolute;
-    animation: keyframes-fill .5s;
-  }
-  
-  .container .clipboard-check {
-    position: absolute;
-    display: none;
-    animation: keyframes-fill .5s;
-  }
-  
-  /* ------ On check event ------ */
-  .container input:checked ~ .clipboard {
-    display: none;
-  }
-  
-  .container input:checked ~ .clipboard-check {
-    display: block;
-  }
-  
-  /* ------ Hide the default checkbox ------ */
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* ------ Animation ------ */
-  @keyframes keyframes-fill {
-    0% {
-      transform: rotate(0deg) scale(0);
-      opacity: 0;
-    }
-  
-    50% {
-      transform: rotate(-10deg) scale(1.2);
-    }
-  }
-
-  #scp_sl_ip button {
+  #learnmore button {
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -396,15 +224,16 @@ body {
     font-size: inherit;
     font-family: inherit;
     margin-top: 30px ;
+    margin-bottom: 30px;
    }
 
    
-   #scp_sl_ip button.learn-more {
+   #learnmore button.learn-more {
     width: 12rem;
     height: auto;
    }
    
-   #scp_sl_ip button.learn-more .circle {
+   #learnmore button.learn-more .circle {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: relative;
     display: block;
@@ -415,7 +244,7 @@ body {
     border-radius: 1.625rem;
    }
    
-   #scp_sl_ip button.learn-more .circle .icon {
+   #learnmore button.learn-more .circle .icon {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     top: 0;
@@ -424,7 +253,7 @@ body {
     background: #fff;
    }
    
-   #scp_sl_ip button.learn-more .circle .icon.arrow {
+   #learnmore button.learn-more .circle .icon.arrow {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     left: 0.625rem;
     width: 1.125rem;
@@ -432,7 +261,7 @@ body {
     background: none;
    }
    
-   #scp_sl_ip button.learn-more .circle .icon.arrow::before {
+   #learnmore button.learn-more .circle .icon.arrow::before {
     position: absolute;
     content: "";
     top: -0.29rem;
@@ -444,7 +273,7 @@ body {
     transform: rotate(45deg);
    }
    
-   #scp_sl_ip button.learn-more .button-text {
+   #learnmore button.learn-more .button-text {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     top: 0;
@@ -462,110 +291,16 @@ body {
     letter-spacing: 3px;
    }
    
-   #scp_sl_ip button:hover .circle {
+   #learnmore button:hover .circle {
     width: 100%;
    }
    
-   #scp_sl_ip button:hover .circle .icon.arrow {
+   #learnmore button:hover .circle .icon.arrow {
     background: #fff;
     transform: translate(1rem, 0);
    }
    
-   #scp_sl_ip button:hover .button-text {
-    color: #fff;
-    font-family: fantasy;
-    font-weight: 100;
-   }
-
-   #minecraft_ip button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    background: transparent;
-    padding: 0;
-    font-size: inherit;
-    font-family: inherit;
-    margin-top: 30px ;
-   }
-
-   
-   #minecraft_ip button.learn-more {
-    width: 12rem;
-    height: auto;
-   }
-   
-   #minecraft_ip button.learn-more .circle {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
-    margin: 0;
-    width: 3rem;
-    height: 3rem;
-    background: #282936;
-    border-radius: 1.625rem;
-   }
-   
-   #minecraft_ip button.learn-more .circle .icon {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background: #fff;
-   }
-   
-   #minecraft_ip button.learn-more .circle .icon.arrow {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    left: 0.625rem;
-    width: 1.125rem;
-    height: 0.125rem;
-    background: none;
-   }
-   
-   #minecraft_ip button.learn-more .circle .icon.arrow::before {
-    position: absolute;
-    content: "";
-    top: -0.29rem;
-    right: 0.0625rem;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
-    transform: rotate(45deg);
-   }
-   
-   #minecraft_ip button.learn-more .button-text {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 0.75rem 0;
-    margin: 0 0 0 2.7rem;
-    color: #282936;
-    font-weight: 700;
-    line-height: 1.6;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: fantasy;
-    letter-spacing: 3px;
-   }
-   
-   #minecraft_ip button:hover .circle {
-    width: 100%;
-   }
-   
-   #minecraft_ip button:hover .circle .icon.arrow {
-    background: #fff;
-    transform: translate(1rem, 0);
-   }
-   
-   #minecraft_ip button:hover .button-text {
+   #learnmore button:hover .button-text {
     color: #fff;
     font-family: fantasy;
     font-weight: 100;
