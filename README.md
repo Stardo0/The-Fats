@@ -4,7 +4,7 @@ Welcome to TheFats Group website! https://the-fats.pages.dev/
 
 ## Introduction
 
-<Discontinued>
+_*Discontinued*_
   
 This README provides an overview of TheFats Group website, designed to enhance the online experience for members of TheFats friend group. This website aims to provide a platform for various online activities and services that cater to the needs and interests of TheFats Group.
 
